@@ -23,19 +23,10 @@ public class Arquivo {
 
 
             // Flag que indica onde começa as informações do Produto
-            bw.write("++ Produtos ++\n");
+            bw.write("++  Produto ++\n");
             bw.write(prod.getNome() + "\n");
             bw.write(prod.getTipo() + "\n");
             bw.write(prod.getPreco() + "\n");
-
-
-            // 1. Escrita de forma estática, ou seja, direta
-            linha="Olá mundo 3";
-            bw.write("Olá mundo\n");
-            bw.newLine();
-            bw.write("amei demais");
-            bw.write(linha);
-
 
 
         } catch (Exception e) {
@@ -67,7 +58,7 @@ public class Arquivo {
 
         try {
             // Instanciando os objetos
-            is = new FileInputStream("Produtos.txt");
+            is = new FileInputStream("Produto.txt");
             isr = new InputStreamReader(is);
             br = new BufferedReader(isr);
 
@@ -76,7 +67,7 @@ public class Arquivo {
 
             while (linhaLer != null) {
                 // Comparando se o que está em linhaLer é igual a minha flag
-                if (linhaLer.contains("++ Produtos ++")) {
+                if (linhaLer.contains("++ Produto ++")) {
                     // Variável auxiliar de produto
                     Produto f1 = new Produto();
                     f1.setNome(br.readLine());
